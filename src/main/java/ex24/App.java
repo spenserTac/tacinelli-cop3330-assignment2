@@ -8,6 +8,11 @@ import java.util.Scanner;
 *
 * */
 
+/*
+ *  UCF COP3330 Fall 2021 Assignment 2 Solution
+ *  Copyright 2021 Spenser Tacinelli
+ */
+
 public class App {
 
     public static boolean isAnagram(String string1, String string2){
