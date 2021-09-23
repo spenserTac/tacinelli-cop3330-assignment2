@@ -23,50 +23,32 @@ public class App {
 
         if(password.matches(".*[a-zA-Z].*")){
             str_count = true;
-            //System.out.println("111");
         }
         if(password.matches(".*[0-9].*")){
             num_count = true;
-            //System.out.println("222");
         }
         if(password.matches(".*[!@#$%&*()_+=|<>?{}\\[\\]~-].*")){
             special_characters = true;
-            //System.out.println("333");
         }
 
         if(num_count && password.length() > 8){
             if(str_count){
                 if(special_characters){
-                    //System.out.printf("The password \'%s\' is a very strong password", password);
                     result = 4;
                 }
                 else{
-                    //System.out.printf("The password \'%s\' is a strong password", password);
                     result = 3;
                 }
             }
         }
 
         if(num_count && str_count == false && special_characters == false && password.length() < 8){
-            //System.out.printf("The password \'%s\' is a very weak password", password);
             result = 1;
         }
 
         if(str_count && num_count == false && special_characters == false && password.length() < 8){
-            //System.out.printf("The password \'%s\' is a weak password", password);
             result = 2;
         }
-
-
-//        for(int i = 0; i < password.length; i++){
-//            for(int j = 0; j < 10; j++) {
-//                if (password[i].equals((char) j)) {
-//                    num_count++;
-//                }
-//            }
-//
-//            if()
-//        }
 
         return result;
     }
