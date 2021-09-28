@@ -1,29 +1,60 @@
 package ex40;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class App {
     public static void main(String[] args){
-        Map<String, String[]> data =
+
+        ArrayList<Map<String, String[]>> employees = new ArrayList<Map<String, String[]>>();
+
+        Map<String, String[]> data1 =
                 new HashMap<String, String[]>();
 
         String[] john_johnson = {"Manager", "2016-12-31"};
-        data.put("John Johnson", john_johnson);
+        data1.put("John Johnson", john_johnson);
+
+        employees.add(data1);
+
+        Map<String, String[]> data2 =
+                new HashMap<String, String[]>();
 
         String[] tou_xiong = {"Software Engineer", "2016-10-05"};
-        data.put("Tou Xiong", tou_xiong);
+        data2.put("Tou Xiong", tou_xiong);
+
+        employees.add(data2);
+
+        Map<String, String[]> data3 =
+                new HashMap<String, String[]>();
 
         String[] michaela_michaelson = {"District manager", "2015-12-19"};
-        data.put("Michaela Michaelson", michaela_michaelson);
+        data3.put("Michaela Michaelson", michaela_michaelson);
+
+        employees.add(data3);
+
+        Map<String, String[]> data4 =
+                new HashMap<String, String[]>();
 
         String[] jake_jacobson = {"Programmer", ""};
-        data.put("Jake Jacobson", jake_jacobson);
+        data4.put("Jake Jacobson", jake_jacobson);
+
+        employees.add(data4);
+
+        Map<String, String[]> data5 =
+                new HashMap<String, String[]>();
 
         String[] jacquelyn_jackson = {"DBA", ""};
-        data.put("Jacquelyn Jackson", jacquelyn_jackson);
+        data5.put("Jacquelyn Jackson", jacquelyn_jackson);
+
+        employees.add(data5);
+
+        Map<String, String[]> data6 =
+                new HashMap<String, String[]>();
 
         String[] sally_webber = {"Web Developer", "2015-12-18"};
-        data.put("Sally Webber", sally_webber);
+        data6.put("Sally Webber", sally_webber);
+
+        employees.add(data6);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -32,11 +63,19 @@ public class App {
 
         System.out.println("Results:\nName                | Position          | Separation Date");
         System.out.println("--------------------|-------------------|----------------");
+//
+//        for(Map.Entry<String, String[]> person : data.entrySet()){
+//            System.out.println(person.getKey() + "\t\t| " + person.getValue()[0] + "\t\t\t| " + person.getValue()[1]);
+//        }
 
-        for(Map.Entry<String, String[]> person : data.entrySet()){
-            if(person.getKey().toLowerCase().contains(name)){
-                System.out.println(person.getKey() + "\t\t| " + person.getValue()[0] + "\t\t\t| " + person.getValue()[1]);
+        for(int i = 0; i < employees.size(); i++){
+            for(Map.Entry<String, String[]> person : employees.get(i).entrySet()){
+                if(person.getKey().toLowerCase().contains(name)){
+                    System.out.println(person.getKey() + "\t\t| " + person.getValue()[0] + "\t\t\t| " + person.getValue()[1]);
+                }
             }
+            //System.out.println(employees.get(i).keySet() + "\t\t| " + employees.get(i).values() + "\t\t\t| " + employees.get(i).values());
         }
+
     }
 }
