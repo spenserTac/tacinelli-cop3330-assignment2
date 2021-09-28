@@ -61,8 +61,8 @@ public class App {
         System.out.print("Enter a search string: ");
         String name = scanner.nextLine();
 
-        System.out.println("Results:\nName                | Position          | Separation Date");
-        System.out.println("--------------------|-------------------|----------------");
+        System.out.println("Results:\nName                | Position            | Separation Date");
+        System.out.println("--------------------|---------------------|----------------");
 //
 //        for(Map.Entry<String, String[]> person : data.entrySet()){
 //            System.out.println(person.getKey() + "\t\t| " + person.getValue()[0] + "\t\t\t| " + person.getValue()[1]);
@@ -71,7 +71,8 @@ public class App {
         for(int i = 0; i < employees.size(); i++){
             for(Map.Entry<String, String[]> person : employees.get(i).entrySet()){
                 if(person.getKey().toLowerCase().contains(name)){
-                    System.out.println(person.getKey() + "\t\t| " + person.getValue()[0] + "\t\t\t| " + person.getValue()[1]);
+                    //System.out.println(person.getKey() + "\t\t| " + person.getValue()[0] + "\t\t\t| " + person.getValue()[1]);
+                    System.out.printf("%-19s | %-19s | %s\n", person.getKey(), person.getValue()[0], person.getValue()[1]);
                 }
             }
             //System.out.println(employees.get(i).keySet() + "\t\t| " + employees.get(i).values() + "\t\t\t| " + employees.get(i).values());

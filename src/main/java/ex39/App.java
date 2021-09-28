@@ -61,12 +61,13 @@ public class App {
 
 
         System.out.println("Results:\nName                | Position          | Separation Date");
-        System.out.println("--------------------|-------------------|----------------");
+        System.out.println("--------------------|---------------------|----------------");
 
 
         for(int i = 0; i < employees.size(); i++){
             for(Map.Entry<String, String[]> person : employees.get(i).entrySet()){
-                System.out.println(person.getKey() + "\t\t| " + person.getValue()[0] + "\t\t\t| " + person.getValue()[1]);
+                //System.out.println(person.getKey() + "\t\t| " + person.getValue()[0] + "\t\t\t| " + person.getValue()[1]);
+                System.out.printf("%-19s | %-19s | %s\n", person.getKey(), person.getValue()[0], person.getValue()[1]);
             }
         }
 
